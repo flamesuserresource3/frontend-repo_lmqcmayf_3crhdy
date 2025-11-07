@@ -1,28 +1,34 @@
-import { useState } from 'react'
+import Hero from "./components/Hero";
+import About from "./components/About";
+import Experience from "./components/Experience";
+import Contact from "./components/Contact";
 
-function App() {
-  const [count, setCount] = useState(0)
-
+export default function App() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 to-blue-50 flex items-center justify-center">
-      <div className="bg-white p-8 rounded-lg shadow-lg">
-        <h1 className="text-3xl font-bold text-gray-800 mb-4">
-          Vibe Coding Platform
-        </h1>
-        <p className="text-gray-600 mb-6">
-          Your AI-powered development environment
-        </p>
-        <div className="text-center">
-          <button
-            onClick={() => setCount(count + 1)}
-            className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded"
-          >
-            Count is {count}
-          </button>
+    <div className="min-h-screen bg-white text-gray-900">
+      <header className="sticky top-0 z-50 backdrop-blur supports-[backdrop-filter]:bg-white/70 bg-white/80 border-b border-gray-200">
+        <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+          <a href="#" className="font-semibold">Renald Fuji Cahyono</a>
+          <nav className="hidden sm:flex gap-6 text-sm">
+            <a href="#tentang" className="hover:text-indigo-600">Tentang</a>
+            <a href="#pengalaman" className="hover:text-indigo-600">Pengalaman</a>
+            <a href="#kontak" className="hover:text-indigo-600">Kontak</a>
+          </nav>
         </div>
-      </div>
-    </div>
-  )
-}
+      </header>
 
-export default App
+      <main>
+        <Hero />
+        <About />
+        <Experience />
+        <Contact />
+      </main>
+
+      <footer className="border-t border-gray-200">
+        <div className="max-w-6xl mx-auto px-6 py-8 text-sm text-gray-500">
+          © {new Date().getFullYear()} Renald Fuji Cahyono. All rights reserved.
+        </div>
+      </footer>
+    </div>
+  );
+}
